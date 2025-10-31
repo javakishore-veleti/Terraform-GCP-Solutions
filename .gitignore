@@ -221,3 +221,4 @@ terraform.rc
 **/*.hcl
 resource_one.txt
 resource_two.txt
+/terraform-workspace/03_variables/default.txt
