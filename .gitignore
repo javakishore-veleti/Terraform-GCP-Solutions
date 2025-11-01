@@ -223,3 +223,4 @@ resource_one.txt
 resource_two.txt
 /terraform-workspace/03_variables/default.txt
 /terraform-workspace/04_lifecycle/hello3.txt
+/GCP-Workspace/02-With-Service-Account/tfplan
