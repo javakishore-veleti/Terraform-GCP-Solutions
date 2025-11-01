@@ -1,0 +1,29 @@
+{
+  "name": "terraform-handson-solutions",
+  "version": "0.1.0",
+  "description": "Hands-on solutions and demos for Terraform exercises",
+  "scripts": {
+    "aws-precheck": "dotenv terraform version && aws sts get-caller-identity",
+    "aws-workplace:vpc-setup:init": "npx dotenv -e .env -- terraform -chdir=AWS-Workplace/features/01-aws-vpc-setup init -input=false",
+    "aws-workplace:vpc-setup:plan": "npx dotenv -e .env -- terraform -chdir=AWS-Workplace/features/01-aws-vpc-setup plan -out=plan.tfplan -input=false",
+    "aws-workplace:vpc-setup:plan": "npx dotenv -e .env -- terraform -chdir=AWS-Workplace/features/01-aws-vpc-setup plan -out=plan.tfplan -input=false",
+    "aws-workplace:vpc-setup:apply": "npx dotenv -e .env -- terraform -chdir=AWS-Workplace/features/01-aws-vpc-setup apply -input=false plan.tfplan",
+    "aws-workplace:vpc-setup:destroy": "npx dotenv -e .env -- terraform -chdir=AWS-Workplace/features/01-aws-vpc-setup destroy -auto-approve",
+    "aws-workplace:vpc-setup:clean": "dotenv rm -rf features/01-aws-vpc-setup/.terraform features/01-aws-vpc-setup/terraform.tfstate* features/01-aws-vpc-setup/plan.tfplan 2>/dev/null || true",
+    "aws-workplace:vpc-setup:describe-vpcs": "aws ec2 describe-vpcs --profile terraform-mastery-profile  --query \"Vpcs[*].{ID:VpcId,CIDR:CidrBlock,Name:Tags[?Key=='Name']|[0].Value}\"",
+    "aws-workplace:vpc-setup:output": "npx dotenv -e .env -- terraform -chdir=AWS-Workplace/features/01-aws-vpc-setup output",
+    "test": "echo \"No tests specified\" dotenv && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javakishore-veleti/Terraform-HandsOn-Solutions.git"
+  },
+  "author": "javakishore-veleti",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0"
+  }
+}

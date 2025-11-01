@@ -224,3 +224,13 @@ resource_two.txt
 /terraform-workspace/03_variables/default.txt
 /terraform-workspace/04_lifecycle/hello3.txt
 /GCP-Workspace/02-With-Service-Account/tfplan
+**/.envrc
+**/.env
+.env
+.env.local
+/node_modules/
+**/.terraform/
+**/.terraform.lock.hcl
+.terraform/lock.hcl
+**/terraform.tfstate
+terraform.tfstate
